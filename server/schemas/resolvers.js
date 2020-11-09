@@ -4,8 +4,21 @@ const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
-        text: async () => {
-            return Text.find().sort({ createdAt: -1})
+        text: async (parent, { username }) => {
+            const params = username ? { username }: {};
+            return Text.find(params).sort({ createdAt: -1})
+        },
+        users: async () => {
+            return User.find()
+            .select('-__v -password')
+            .populate('friends')
+            .populate('text')
+        },
+        user: async (parent, { username }) => {
+            return User.findOne({ username })
+                .select('-__v -password')
+                .populate('friends')
+                .populate('text')     
         }
     }
 };

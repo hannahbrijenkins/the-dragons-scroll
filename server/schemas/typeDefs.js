@@ -7,9 +7,19 @@ const typeDefs = gql`
         createdAt: String
         username: String
     }
-    type Query {
-        text: [Text]
+    type User {
+        _id: ID
+        username: String
+        email: String
+        textPosts: [Text]
+        friends: [User]
     }
+    type Query {
+        users: [User]
+        user(username: String!): User
+        text(username: String): [Text]
+    }
+    
 `;
 
 module.exports = typeDefs;
