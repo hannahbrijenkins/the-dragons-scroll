@@ -1,6 +1,6 @@
 const { User, Post } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
-// const { signToken } = require('../utils/auth')
+const { signToken } = require('../utils/auth')
 
 const resolvers = {
     Query: {
@@ -24,8 +24,9 @@ const resolvers = {
     Mutation: {
         addUser: async (parents, args) => {
             const user = await User.create(args)
+            const token = signToken(user);
 
-            return user;
+            return { token, user };
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });
@@ -40,7 +41,23 @@ const resolvers = {
                 throw new AuthenticationError('Incorrect credentials');
             }
 
-            return user;
+            const token = signToken(user);
+            return { token, user };
+        },
+        addPost: async (parent, args, context) => {
+            if (context.user) {
+                const post = await Post.create({ ...args, username: context.user.username });
+
+                await User.findByIdAndUpdate(
+                    { _id: context.user._id },
+                    { $push: { posts: post._id }},
+                    { new: true }
+                );
+
+                return thoughtl
+            }
+
+            throw new AuthenticationError('Please log in before posting.')
         }
     }
 };
