@@ -66,10 +66,23 @@ const resolvers = {
                     { new: true }
                 );
 
-                return thoughtl
+                return post;
             }
 
             throw new AuthenticationError('Please log in before posting.')
+        },
+        addComment: async (parent, { postId, commentText }, context) => {
+            if (context.user) {
+                const updatedPost = await Thought.findOneAndUpdate(
+                    { _id: thoughtId },
+                    { $push: { comments: { comments, username: context.user.username } } },
+                    { new: true, runValidators: true }
+                );
+
+                return updatedPost;
+            }
+
+            throw new AuthenticationError('You need to log in!')
         }
     }
 };
