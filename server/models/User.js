@@ -20,10 +20,10 @@ const userSchema = new Schema(
             required: true,
             minlength: 8
         },
-        textPosts: [
+        post: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'Text'
+                ref: 'Post'
             }
         ],
         friends: [

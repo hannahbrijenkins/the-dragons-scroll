@@ -1,10 +1,9 @@
 const moment = require('moment');
 const { Schema, model } = require('mongoose');
-// const moment = require('moment');
 
-const textSchema = new Schema(
+const postSchema = new Schema(
     {
-        text: {
+        post: {
             type: String,
             required: 'You cannot post a blank text post! Please share your wisdom...',
             minlength: 3,
@@ -18,10 +17,16 @@ const textSchema = new Schema(
         username: {
             type: String,
             required: true
-        }
+        },
+        comments: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Comment'
+            }
+        ]
     }
 );
 
-const Text = model('Text', textSchema);
+const Post = model('Post', postSchema);
 
-module.exports = Text;
+module.exports = Post;
