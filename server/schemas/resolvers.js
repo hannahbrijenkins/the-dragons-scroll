@@ -20,6 +20,9 @@ const resolvers = {
             const params = username ? { username }: {};
             return Post.find(params).sort({ createdAt: -1})
         },
+        posts: async (parent, args) => {
+            return Post.fin
+        },
         users: async () => {
             return User.find()
             .select('-__v -password')
@@ -57,8 +60,9 @@ const resolvers = {
             return { token, user };
         },
         addPost: async (parent, args, context) => {
+            // console.log(args);
             if (context.user) {
-                const post = await Post.create({ ...args, username: context.user.username });
+                const post = await Post.create({ post: args.postText, username: context.user.username });
 
                 await User.findByIdAndUpdate(
                     { _id: context.user._id },

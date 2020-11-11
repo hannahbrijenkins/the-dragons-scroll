@@ -12,6 +12,7 @@ const Dashboard = () => {
     return (
         <main>
             <div>
+                <h2>Welcome to</h2>
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
@@ -22,4 +23,4 @@ const Dashboard = () => {
     );
 };
 
-export default Home;
+export default Dashboard;

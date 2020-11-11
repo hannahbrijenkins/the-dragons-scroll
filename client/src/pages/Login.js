@@ -23,11 +23,12 @@ const Login = (props) => {
 
     return (
         <main>
-            <div>
-                <h4>Login</h4>
+            <div  class="card-panel grey lighten-3">
+                <h4 class="crimson">Login</h4>
                 <div>
                     <form onSubmit={handleFormSubmit}>
                         <input
+                        class ="crimson"
                             placeholder='Your email'
                             name='email'
                             type='email'
@@ -36,6 +37,7 @@ const Login = (props) => {
                             onChange={handleChange}
                         />
                         <input
+                        class ="crimson"
                             placeholder='Password'
                             name='password'
                             type='password'
@@ -43,7 +45,7 @@ const Login = (props) => {
                             value={formState.password}
                             onChange={handleChange}
                         />
-                        <button type="submit">
+                        <button type="submit" class ="crimson btn grey darken-3">
                             Login
                         </button>
                     </form>

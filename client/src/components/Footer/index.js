@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <div>&copy;2020 by Hannah Jenkins</div>
+            <div class="card-panel light-green darken-4 crimson">&copy;2020 by Hannah Jenkins</div>
         </footer>
     );
 };

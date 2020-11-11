@@ -17,19 +17,20 @@ const Signup = () => {
 
     return (
         <main>
-            <div>
+            <div class="card-panel grey lighten-3">
                 <h4>Sign Up</h4>
                 <div>
                     <form>
                         <input
+                        class ="crimson"
                         placeholder='Username'
                         name='username'
-                        type='username'
                         id='username'
                         value={formState.username}
                         onChange={handleChange}
                         />
                         <input
+                        class ="crimson"
                         placeholder='Email'
                         name='email'
                         type='email'
@@ -38,6 +39,7 @@ const Signup = () => {
                         onChange={handleChange}
                         />
                         <input
+                        class ="crimson"
                         placeholder='Password'
                         name='password'
                         type='password'
@@ -45,7 +47,7 @@ const Signup = () => {
                         value={formState.password}
                         onChange={handleChange}
                         />
-                        <button type='submit'>
+                        <button type='submit' class ="crimson btn grey darken-3">
                             Submit
                         </button>
                     </form>

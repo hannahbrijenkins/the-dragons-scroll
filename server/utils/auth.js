@@ -11,21 +11,21 @@ module.exports = {
     },
     authMiddleware: function({ req }) {
         let token = req.body.token || req.body.token || req.headers.authorization;
-
+        // console.log(req.headers);
         if (req.headers.authorization) {
             token = token
             .split(' ')
             .pop()
             .trim();
         }
-
+        // console.log(token)
         if (!token) {
             return req;
         }
 
         try {
             const { data } = jwt.verify(token, secret, { maxAge: expiration });
-            req.use = data;
+            req.user = data;
         } catch {
             console.log('Invalid token');
         }
