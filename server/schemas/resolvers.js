@@ -1,4 +1,4 @@
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
 
@@ -77,9 +77,9 @@ const resolvers = {
         },
         addComment: async (parent, { postId, commentText }, context) => {
             if (context.user) {
-                const updatedPost = await Thought.findOneAndUpdate(
-                    { _id: thoughtId },
-                    { $push: { comments: { comments, username: context.user.username } } },
+                const updatedPost = await Comment.findOneAndUpdate(
+                    { _id: Post._id },
+                    { $push: { comments: { commentText, username: context.user.username } } },
                     { new: true, runValidators: true }
                 );
 

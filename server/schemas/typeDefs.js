@@ -6,7 +6,7 @@ const typeDefs = gql`
         post: String
         createdAt: String
         username: String
-        comment: [Comment]
+        comments: [Comment]
     }
     type User {
         _id: ID
@@ -17,7 +17,7 @@ const typeDefs = gql`
     }
     type Comment {
         _id: ID
-        comment: String
+        commentText: String
         createdAt: String
         username: String
     }
