@@ -11,12 +11,12 @@ const Header = () => {
             </div>
             <nav class="nav-extended grey darken-4">
                 <div class="nav-wrapper">
-                    <Link to="/">Dashboard</Link>
-                    <Link to="/signup">Signup</Link>
-                    <Link to="/login">Login</Link>
-                    <Link to="/profile">Profile</Link>
-                    <Link to="/">Dice Roller</Link>
-                    <Link to="/">Maps</Link>
+                    <ul class="nav-mobile">
+                        <li><a><Link to="/">Dashboard</Link></a></li>
+                        <li><a><Link to="/signup">Signup</Link></a></li>
+                        <li><a><Link to="/login">Login</Link></a></li>
+                        <li><a><Link to="/profile">Profile</Link></a></li>
+                    </ul>
                 </div>
             </nav>
         </header>
