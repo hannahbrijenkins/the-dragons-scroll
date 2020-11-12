@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/hannahbrijenkins/the-dragons-scroll#readme",
   "devDependencies": {
-    "concurrently": "^5.3.0",
+    "concurrently": "^5.3.0"
+  },
+  "dependencies": {
     "if-env": "^1.0.4"
   }
 }
