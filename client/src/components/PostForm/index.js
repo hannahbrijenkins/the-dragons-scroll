@@ -42,7 +42,7 @@ const PostForm = () => {
     return (
         <div>
             <form onSubmit={handleFormSubmit}>
-                <textarea  placeholder="Post your wildest adventures here!" value={postText}>
+                <textarea  placeholder="Post your wildest adventures here!" value={postText} onChange={handleChange}>
                 </textarea>
                 <button type="submit">Submit</button>
             </form>
