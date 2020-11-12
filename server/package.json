@@ -11,7 +11,9 @@
     "moment": "^2.29.1",
     "mongoose": "^5.10.13"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "if-env": "^1.0.4"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
