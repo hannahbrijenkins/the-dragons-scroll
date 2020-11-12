@@ -15,7 +15,7 @@ const PostList = ({ posts, title }) => {
                             {post.username} posted on {post.createdAt}
                         </h4>
                         <h5>
-                            <p>{post.post}</p>
+                            <p>{post.postText}</p>
                         </h5>
                     </div>
                 ))}
