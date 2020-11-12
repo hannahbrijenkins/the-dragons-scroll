@@ -10,7 +10,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 
 const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql'
+  uri: '/graphql'
 });
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
       <div>
         <Header></Header>
         <div>
-          {/* <Route exact path="/" component={Dashboard}></Route> */}
+          <Route exact path="/" component={Dashboard}></Route>
           <Route exact path="/signup" component={Signup} />
           <Route exact path="/login" component={Login} />
         </div>

@@ -6,17 +6,16 @@ import PostList from '../components/PostList'
 const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_POSTS);
 
-    const posts = data?.posts || [];
-    console.log(posts)
+const posts = data?.posts || [];
+console.log(posts);
 
     return (
         <main>
             <div>
-                <h2>Welcome to</h2>
                 {loading ? (
                     <div>Loading...</div>
                 ) : (
-                    <PostList posts={posts} title="Posts from friends..." />
+                    <PostList class="meddon" posts={posts} />
                 )}
             </div>
         </main>

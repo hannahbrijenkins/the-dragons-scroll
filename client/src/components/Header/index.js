@@ -6,7 +6,7 @@ const Header = () => {
             <div class="card-panel col s12 light-green darken-4">
                 <h1 class="center-align meddon" >The Dragon's Scroll</h1>
             </div>
-            <nav class=" nav-extended grey darken-4">
+            <nav class="nav-extended grey darken-4">
                 <div class="nav-wrapper">
                 <ul>
                     <li><a href="/">Dashboard</a></li>

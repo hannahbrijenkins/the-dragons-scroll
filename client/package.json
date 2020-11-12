@@ -1,5 +1,6 @@
 {
-  "name": "the-dragons-scroll",
+  "proxy": "http://localhost:3001",
+  "name": "the-dragons-scroll",  
   "version": "0.1.0",
   "private": true,
   "dependencies": {

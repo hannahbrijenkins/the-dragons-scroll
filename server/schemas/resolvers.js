@@ -21,7 +21,7 @@ const resolvers = {
             return Post.find(params).sort({ createdAt: -1})
         },
         posts: async (parent, args) => {
-            return Post.fin
+            return Post.find().sort({ createdAt: -1 });
         },
         users: async () => {
             return User.find()

@@ -10,14 +10,13 @@ const PostList = ({ posts, title }) => {
             <h3>{title}</h3>
             {posts &&
                 posts.map(post => (
-                    <div key={posts._id}>
-                        <p>
-                            {posts.username}
-                            posted on {posts.createdAt}
-                        </p>
-                        <div>
-                            <p>{posts.postText}</p>
-                        </div>
+                    <div class="card-panel blue-grey lighten-4 crimson"key={post._id}>
+                        <h4>
+                            {post.username} posted on {post.createdAt}
+                        </h4>
+                        <h5>
+                            <p>{post.post}</p>
+                        </h5>
                     </div>
                 ))}
         </div>

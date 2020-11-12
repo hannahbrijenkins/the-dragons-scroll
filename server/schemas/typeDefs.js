@@ -6,7 +6,6 @@ const typeDefs = gql`
         post: String
         createdAt: String
         username: String
-        comment: [Comment]
     }
     type User {
         _id: ID
