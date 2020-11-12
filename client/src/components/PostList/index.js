@@ -1,7 +1,7 @@
 import React from 'react';
 
-const PostList = ({ posts, title }) => {
-    if (!posts.length) {
+const PostList = ({ post, title }) => {
+    if (!post.length) {
         return <h3>No Posts Yet</h3>
     }
 
@@ -10,7 +10,7 @@ const PostList = ({ posts, title }) => {
             <h3>{title}</h3>
             {posts &&
                 posts.map(post => (
-                    <div key={thought._id}>
+                    <div key={post._id}>
                         <p>
                             {post.username}
                             posted on {post.createdAt}
