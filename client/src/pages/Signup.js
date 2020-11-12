@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
+import { useMutation } from '@apollo/react-hooks';
+import { ADD_USER } from '../utils/mutations';
 
 const Signup = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
+
+const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -13,14 +17,24 @@ const Signup = () => {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-    };
+    
+
+    try {
+        const { data } = await addUser({
+            variables: { ...formState }
+        });
+        console.log(data);
+    } catch (e) {
+        console.error(e);
+    }
+};
 
     return (
         <main>
             <div class="card-panel grey lighten-3">
                 <h4>Sign Up</h4>
                 <div>
-                    <form>
+                    <form onSubmit={handleFormSubmit}>
                         <input
                         class ="crimson"
                         placeholder='Username'
@@ -51,6 +65,7 @@ const Signup = () => {
                             Submit
                         </button>
                     </form>
+                    {error && <div>Oops! There was an error, please make sure you are inputing accurate information.</div>}
                 </div>
             </div>
         </main>
