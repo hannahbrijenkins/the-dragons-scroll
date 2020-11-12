@@ -6,7 +6,7 @@ import PostList from '../components/PostList'
 const Dashboard = () => {
     const { loading, data } = useQuery(QUERY_POSTS);
 
-    const thoughts = data?.posts || [];
+    const posts = data?.posts || [];
     console.log(posts)
 
     return (
