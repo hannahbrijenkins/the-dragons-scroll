@@ -1,6 +1,6 @@
 {
   "proxy": "http://localhost:3001",
-  "name": "the-dragons-scroll",  
+  "name": "the-dragons-scroll",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -10,6 +10,7 @@
     "bulma": "^0.9.1",
     "graphql": "^15.4.0",
     "graphql-tag": "^2.11.0",
+    "jwt-decode": "^3.1.1",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
