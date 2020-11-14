@@ -29,6 +29,7 @@ const PostForm = () => {
 
     const handleFormSubmit = async event => {
         event.preventDefault();
+        setText();
 
         try {
             await addPost({
@@ -44,7 +45,7 @@ const PostForm = () => {
             <form class="input-field col s6" onSubmit={handleFormSubmit}>
                 <textarea  placeholder="Post your wildest adventures here!" value={postText} onChange={handleChange}>
                 </textarea>
-                <button type="submit">Submit</button>
+                <button onSubmit={handleFormSubmit} type="submit">Submit</button>
             </form>
         </div>
     );

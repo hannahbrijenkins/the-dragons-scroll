@@ -29,10 +29,7 @@ export const ADD_POST = gql`
             _id
             post
             createdAt
-            user {
-                _id
-                username
-            }
+            username
         }
     }
 `
